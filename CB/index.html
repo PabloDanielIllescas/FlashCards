@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCards</title>
+   
+  <style>
+    /*Dispositivos grandes (computadoras portátiles/computadoras de escritorio, 992px y arriba*/
+@media screen and (min-width: 992px) {
+    body{
+            
+        background-color: #2b4c7e;
+     }
+     main {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%); 
+     /*border: 2px inset #23145b; */
+     padding: 10px;
+     width: 1000px; /* Ancho fijo */
+     height: 605px; /* Altura fija */
+     overflow: auto;
+     background-image: url(otra.jpg);
+     display: flex; /* Aplicamos un flex container */
+     justify-content: center; /* Centramos horizontalmente */
+     align-items: center;
+     }
+     section{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+     #titulo{
+         text-align: center;
+     }
+     #visible {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items:center ;
+     }
+     h1{
+         color: yellow;
+         font-size: 300% ;
+         border-radius: 10px;
+         font-family: 'Noto Serif', serif;
+     }
+     h2{
+         color:yellow;
+         font-size: 250%;
+         }
+     #flash{
+         color: yellow;
+     }
+     #verso {
+     display: block;
+     color: navy;
+     font-size: 150%;
+     background-color: antiquewhite;
+     border-radius: 10px;
+     padding: 10px;
+     }
+     #texto{
+     color: navy;
+     font-size: 150%;
+     font-weight: 400;
+     }
+     #oculto {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 110px; 
+     text-align: center; /* Agregado para centrar el texto del botón */
+     background-color: bisque;
+     border-radius: 10px;
+     padding: 10px;
+     }
+     #oculto button {
+     border-style: none;
+     border-radius: 8px;
+     padding: 5px;
+     background-color: skyblue;
+     text-align: center; /* Agregado para centrar el texto del botón */
+     }
+     button{
+         border-style: none;
+         border-radius: 8px;
+         padding: 15px;
+         background-color: skyblue ;
+         font-size: medium;
+         font-weight: 550;
+         color: navy;
+     }
+}
+
+/*Dispositivos medios (tabletas de paisaje, 768px y arriba*/
+@media screen and (min-width:768px) and (max-width:992px) {
+    body{
+            
+        background-color: #2b4c7e;
+     }
+     main {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%); 
+     /*border: 2px inset #23145b; */
+     padding: 10px;
+     width: 1000px; /* Ancho fijo */
+     height: 605px; /* Altura fija */
+     overflow: auto;
+     background-image: url(otra.jpg);
+     display: flex; /* Aplicamos un flex container */
+     justify-content: center; /* Centramos horizontalmente */
+     align-items: center;
+     }
+     section{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+     #titulo{
+         text-align: center;
+     }
+     #visible {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items:center ;
+     }
+     h1{
+         color: yellow;
+         font-size: 300% ;
+         border-radius: 10px;
+         font-family: 'Noto Serif', serif;
+     }
+     h2{
+         color:yellow;
+         font-size: 250%;
+         }
+     #flash{
+         color: yellow;
+     }
+     #verso {
+     display: block;
+     color: navy;
+     font-size: 150%;
+     background-color: antiquewhite;
+     border-radius: 10px;
+     padding: 10px;
+     }
+     #texto{
+     color: navy;
+     font-size: 150%;
+     font-weight: 400;
+     }
+     #oculto {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 170px; 
+     width: 65%;
+     text-align: center; /* Agregado para centrar el texto del botón */
+     background-color: bisque;
+     border-radius: 10px;
+     padding: 10px;
+     }
+     #oculto button {
+     border-style: none;
+     border-radius: 8px;
+     padding: 5px;
+     background-color: skyblue;
+     text-align: center; /* Agregado para centrar el texto del botón */
+     }
+     button{
+         border-style: none;
+         border-radius: 8px;
+         padding: 15px;
+         background-color: skyblue ;
+         font-size: medium;
+         font-weight: 550;
+         color: navy;
+     }
+}
+
+/*Dispositivos pequeños (tabletas de retrato y teléfonos grandes, 600px y arriba)*/
+@media (max-width:768px) {
+    body{
+            background-color: #2b4c7e;
+     }
+     main {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%); 
+     /*border: 2px inset #23145b; */
+     padding: 10px;
+     width: 370px; /* Ancho fijo */
+     height: 600px; /* Altura fija */
+     overflow: auto;
+     background-image: url(cruz.png);
+     display: flex; /* Aplicamos un flex container */
+     justify-content: center; /* Centramos horizontalmente */
+     align-items: center;
+     }
+     section{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+     }
+     #titulo{
+         text-align: center;
+     }
+     #visible {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items:center ;
+     }
+     h1{
+         color: yellow;
+         font-size: 300% ;
+         border-radius: 10px;
+         font-family: 'Noto Serif', serif;
+     }
+     h2{
+         color:yellow;
+         font-size: 250%;
+         }
+     #flash{
+         color: yellow;
+     }
+     #verso {
+     display: block;
+     color: navy;
+     font-size: 150%;
+     background-color: antiquewhite;
+     border-radius: 10px;
+     padding: 10px;
+     }
+     #texto{
+     color: navy;
+     font-size: 150%;
+     font-weight: 400;
+     }
+     #oculto {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 220px; 
+     text-align: center; /* Agregado para centrar el texto del botón */
+     background-color: bisque;
+     border-radius: 10px;
+     padding: 10px;
+     }
+     #oculto button {
+     border-style: none;
+     border-radius: 8px;
+     padding: 5px;
+     background-color: skyblue;
+     text-align: center; /* Agregado para centrar el texto del botón */
+     }
+     button{
+         border-style: none;
+         border-radius: 8px;
+         padding: 9px;
+         background-color: skyblue ;
+         font-size: medium;
+         font-weight: 400;
+         color: navy;
+     }
+
+}
+  </style>
+    </head>
+    <body>
+    <main>
+        <section>
+               <div id="titulo">
+                <h1>El Apocalipsis</h1>
+                <h2>de San Juan</h2>
+                <h2 id="flash">FlashCards</h2>
+            </div> 
+    <div id="visible">
+    <div id="verso"></div>
+    <br>
+    <button id="mostrar" onclick="mostrarOcultar()"> Mostrar Verso</button>
+    </div>
+    
+     <div id="oculto" style="display: none;">
+      <div id="texto"></div>
+      <br>
+      <button onclick="flashcard()">Otro verso</button>
+      </div>
+      
+    </section>
+    </main>
+
+
+    <script> 
+    function aleatorio(min, max)
+    { return Math.floor(Math.random()*(max-min+1)+min) }
+
+    function flashcard(){
+   let capitulo=aleatorio(8,15);
+
+   let ocho=aleatorio(1,13);
+   let nueve=aleatorio(1,21);
+   let diez=aleatorio(1,11);
+   let once=aleatorio(1,19);
+   let doce=aleatorio(1,17);
+   let trece=aleatorio(1,18);
+   let catorce=aleatorio(1,20);
+   let quince=aleatorio(1,8);
+   
+    if (capitulo==8) {
+    ocho;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + ocho;}
+   else if (capitulo==9) {
+    nueve;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + nueve;}
+   else if (capitulo==10) {
+    diez;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + diez;}
+    else if (capitulo==11) {
+    once;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + once;}
+    else if (capitulo==12) {
+    doce;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + doce;}
+    else if (capitulo==13) {
+    trece;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + trece;}
+    else if (capitulo==14) {
+    catorce;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + catorce;}
+    else if (capitulo==15) {
+    catorce;
+    document.getElementById("verso").innerHTML ="Apocalipsis " + capitulo + ":" + quince;}
+
+    if (capitulo==8 && ocho==1) {
+    document.getElementById("texto").innerHTML ="Cuando abrió el séptimo sello, se hizo silencio en el cielo como por media hora.";}
+    if (capitulo==8 && ocho==2) {
+    document.getElementById("texto").innerHTML ="Y vi a los siete ángeles que estaban en pie ante Dios; y se les dieron siete trompetas.";}
+    if (capitulo==8 && ocho==3) {
+    document.getElementById("texto").innerHTML ="Otro ángel vino entonces y se paró ante el altar, con un incensario de oro; y se le dio mucho incienso para añadirlo a las oraciones de todos los santos, sobre el altar de oro que estaba delante del trono.";}
+    if (capitulo==8 && ocho==4) {
+    document.getElementById("texto").innerHTML ="Y de la mano del ángel subió a la presencia de Dios el humo del incienso con las oraciones de los santos.";}
+    if (capitulo==8 && ocho==5) {
+    document.getElementById("texto").innerHTML =" Y el ángel tomó el incensario, y lo llenó del fuego del altar, y lo arrojó a la tierra; y hubo truenos, y voces, y relámpagos, y un terremoto.";}
+    if (capitulo==8 && ocho==6) {
+    document.getElementById("texto").innerHTML ="Y los siete ángeles que tenían las siete trompetas se dispusieron a tocarlas.";}
+    if (capitulo==8 && ocho==7) {
+    document.getElementById("texto").innerHTML ="El primer ángel tocó la trompeta, y hubo granizo y fuego mezclados con sangre, que fueron lanzados sobre la tierra; y la tercera parte de los árboles se quemó, y se quemó toda la hierba verde.";}
+    if (capitulo==8 && ocho==8) {
+    document.getElementById("texto").innerHTML ="El segundo ángel tocó la trompeta, y como una gran montaña ardiendo en fuego fue precipitada en el mar; y la tercera parte del mar se convirtió en sangre.";}
+    if (capitulo==8 && ocho==9) {
+    document.getElementById("texto").innerHTML ="Y murió la tercera parte de los seres vivientes que estaban en el mar, y la tercera parte de las naves fue destruida.";}
+    if (capitulo==8 && ocho==10) {
+    document.getElementById("texto").innerHTML ="El tercer ángel tocó la trompeta, y cayó del cielo una gran estrella, ardiendo como una antorcha, y cayó sobre la tercera parte de los ríos, y sobre las fuentes de las aguas.";}
+    if (capitulo==8 && ocho==11) {
+    document.getElementById("texto").innerHTML ="Y el nombre de la estrella es Ajenjo. Y la tercera parte de las aguas se convirtió en ajenjo; y muchos hombres murieron a causa de esas aguas, porque se hicieron amargas.";}
+    if (capitulo==8 && ocho==12) {
+    document.getElementById("texto").innerHTML ="El cuarto ángel tocó la trompeta, y fue herida la tercera parte del sol, y la tercera parte de la luna, y la tercera parte de las estrellas, para que se oscureciese la tercera parte de ellos, y no hubiese luz en la tercera parte del día, y asimismo de la noche.";}
+    if (capitulo==8 && ocho==13) {
+    document.getElementById("texto").innerHTML =" Y miré, y oí a un ángel volar por en medio del cielo, diciendo a gran voz: ¡Ay, ay, ay, de los que moran en la tierra, a causa de los otros toques de trompeta que están para sonar los tres ángeles!";}
+    
+
+    if (capitulo==9 && nueve==1){
+    document.getElementById("texto").innerHTML ="El quinto ángel tocó la trompeta, y vi una estrella que cayó del cielo a la tierra; y se le dio la llave del pozo del abismo.";}
+    if (capitulo==9 && nueve==2){
+    document.getElementById("texto").innerHTML ="Y abrió el pozo del abismo, y subió humo del pozo como humo de un gran horno; y se oscureció el sol y el aire por el humo del pozo.";}
+    if (capitulo==9 && nueve==3){
+    document.getElementById("texto").innerHTML ="Y del humo salieron langostas sobre la tierra; y se les dio poder, como tienen poder los escorpiones de la tierra.";}
+    if (capitulo==9 && nueve==4){
+    document.getElementById("texto").innerHTML ="Y se les mandó que no dañasen a la hierba de la tierra, ni a cosa verde alguna, ni a ningún árbol, sino solamente a los hombres que no tuviesen el sello de Dios en sus frentes.";}
+    if (capitulo==9 && nueve==5){
+    document.getElementById("texto").innerHTML ="Y les fue dado, no que los matasen, sino que los atormentasen cinco meses; y su tormento era como tormento de escorpión cuando hiere al hombre.";}
+    if (capitulo==9 && nueve==6){
+    document.getElementById("texto").innerHTML ="Y en aquellos días los hombres buscarán la muerte, pero no la hallarán; y ansiarán morir, pero la muerte huirá de ellos.";}
+    if (capitulo==9 && nueve==7){
+    document.getElementById("texto").innerHTML ="El aspecto de las langostas era semejante a caballos preparados para la guerra; en las cabezas tenían como coronas de oro; sus caras eran como caras humanas;";}
+    if (capitulo==9 && nueve==8){
+    document.getElementById("texto").innerHTML ="tenían cabello como cabello de mujer; sus dientes eran como de leones";}
+    if (capitulo==9 && nueve==9){
+    document.getElementById("texto").innerHTML ="tenían corazas como corazas de hierro; el ruido de sus alas era como el estruendo de muchos carros de caballos corriendo a la batalla;";}
+    if (capitulo==9 && nueve==10){
+    document.getElementById("texto").innerHTML ="tenían colas como de escorpiones, y también aguijones; y en sus colas tenían poder para dañar a los hombres durante cinco meses.";}
+    if (capitulo==9 && nueve==11){
+    document.getElementById("texto").innerHTML ="Y tienen por rey sobre ellos al ángel del abismo, cuyo nombre en hebreo es Abadón, y en griego, Apolión.";}
+    if (capitulo==9 && nueve==12){
+    document.getElementById("texto").innerHTML ="El primer ay pasó; he aquí, vienen aún dos ayes después de esto.";}
+    if (capitulo==9 && nueve==13){
+    document.getElementById("texto").innerHTML ="El sexto ángel tocó la trompeta, y oí una voz de entre los cuatro cuernos del altar de oro que estaba delante de Dios";}
+    if (capitulo==9 && nueve==14){
+    document.getElementById("texto").innerHTML ="diciendo al sexto ángel que tenía la trompeta: Desata a los cuatro ángeles que están atados junto al gran río Éufrates.";}
+    if (capitulo==9 && nueve==15){
+    document.getElementById("texto").innerHTML =" Y fueron desatados los cuatro ángeles que estaban preparados para la hora, día, mes y año, a fin de matar a la tercera parte de los hombres.";}
+    if (capitulo==9 && nueve==16){
+    document.getElementById("texto").innerHTML ="Y el número de los ejércitos de los jinetes era doscientos millones. Yo oí su número.";}
+    if (capitulo==9 && nueve==17){
+    document.getElementById("texto").innerHTML ="Así vi en visión los caballos y a sus jinetes, los cuales tenían corazas de fuego, de zafiro y de azufre. Y las cabezas de los caballos eran como cabezas de leones; y de su boca salían fuego, humo y azufre.";}
+    if (capitulo==9 && nueve==18){
+    document.getElementById("texto").innerHTML ="Por estas tres plagas fue muerta la tercera parte de los hombres; por el fuego, el humo y el azufre que salían de su boca.";}
+    if (capitulo==9 && nueve==19){
+    document.getElementById("texto").innerHTML ="Pues el poder de los caballos estaba en su boca y en sus colas; porque sus colas, semejantes a serpientes, tenían cabezas, y con ellas dañaban.";}
+    if (capitulo==9 && nueve==20){
+    document.getElementById("texto").innerHTML ="Y los otros hombres que no fueron muertos con estas plagas, ni aun así se arrepintieron de las obras de sus manos, ni dejaron de adorar a los demonios, y a las imágenes de oro, de plata, de bronce, de piedra y de madera, las cuales no pueden ver, ni oír, ni andar;";}
+    if (capitulo==9 && nueve==21){
+    document.getElementById("texto").innerHTML ="y no se arrepintieron de sus homicidios, ni de sus hechicerías, ni de su fornicación, ni de sus hurtos.";}
+        
+    if (capitulo==10 && diez==1) {
+    document.getElementById("texto").innerHTML ="Vi descender del cielo a otro ángel fuerte, envuelto en una nube, con el arco iris sobre su cabeza; y su rostro era como el sol, y sus pies como columnas de fuego.";}
+    if (capitulo==10 && diez==2) {
+    document.getElementById("texto").innerHTML ="Tenía en su mano un librito abierto; y puso su pie derecho sobre el mar, y el izquierdo sobre la tierra;";}
+    if (capitulo==10 && diez==3) {
+    document.getElementById("texto").innerHTML ="y clamó a gran voz, como ruge un león; y cuando hubo clamado, siete truenos emitieron sus voces.";}
+    if (capitulo==10 && diez==4) {
+    document.getElementById("texto").innerHTML =" Cuando los siete truenos hubieron emitido sus voces, yo iba a escribir; pero oí una voz del cielo que me decía: Sella las cosas que los siete truenos han dicho, y no las escribas.";}
+    if (capitulo==10 && diez==5) {
+    document.getElementById("texto").innerHTML ="Y el ángel que vi en pie sobre el mar y sobre la tierra, levantó su mano al cielo";}
+    if (capitulo==10 && diez==6) {
+    document.getElementById("texto").innerHTML ="y juró por el que vive por los siglos de los siglos, que creó el cielo y las cosas que están en él, y la tierra y las cosas que están en ella, y el mar y las cosas que están en él, que el tiempo no sería más";}
+    if (capitulo==10 && diez==7) {
+    document.getElementById("texto").innerHTML =" sino que en los días de la voz del séptimo ángel, cuando él comience a tocar la trompeta, el misterio de Dios se consumará, como él lo anunció a sus siervos los profetas.";}
+    if (capitulo==10 && diez==8) {
+    document.getElementById("texto").innerHTML ="La voz que oí del cielo habló otra vez conmigo, y dijo: Ve y toma el librito que está abierto en la mano del ángel que está en pie sobre el mar y sobre la tierra. ";}
+    if (capitulo==10 && diez==9) {
+    document.getElementById("texto").innerHTML ="Y fui al ángel, diciéndole que me diese el librito. Y él me dijo: Toma, y cómelo; y te amargará el vientre, pero en tu boca será dulce como la miel. ";}
+    if (capitulo==10 && diez==10) {
+    document.getElementById("texto").innerHTML ="Entonces tomé el librito de la mano del ángel, y lo comí; y era dulce en mi boca como la miel, pero cuando lo hube comido, amargó mi vientre. ";}
+    if (capitulo==10 && diez==11) {
+    document.getElementById("texto").innerHTML ="Y él me dijo: Es necesario que profetices otra vez sobre muchos pueblos, naciones, lenguas y reyes.";}
+
+    else if (capitulo==11 && once==1) {
+    document.getElementById("texto").innerHTML ="Entonces me fue dada una caña semejante a una vara de medir, y se me dijo: Levántate, y mide el templo de Dios, y el altar, y a los que adoran en él.";}
+    else if (capitulo==11 && once==2) {
+    document.getElementById("texto").innerHTML ="Pero el patio que está fuera del templo déjalo aparte, y no lo midas, porque ha sido entregado a los gentiles; y ellos hollarán la ciudad santa cuarenta y dos meses.";}
+    else  if (capitulo==11 && once==3) {
+    document.getElementById("texto").innerHTML ="Y daré a mis dos testigos que profeticen por mil doscientos sesenta días, vestidos de cilicio.";}
+    else   if (capitulo==11 && once==4) {
+    document.getElementById("texto").innerHTML ="Estos testigos son los dos olivos, y los dos candeleros que están en pie delante del Dios de la tierra.";}
+    else   if (capitulo==11 && once==5) {
+    document.getElementById("texto").innerHTML ="Si alguno quiere dañarlos, sale fuego de la boca de ellos, y devora a sus enemigos; y si alguno quiere hacerles daño, debe morir él de la misma manera.";}
+    else   if (capitulo==11 && once==6) {
+    document.getElementById("texto").innerHTML ="Estos tienen poder para cerrar el cielo, a fin de que no llueva en los días de su profecía; y tienen poder sobre las aguas para convertirlas en sangre, y para herir la tierra con toda plaga, cuantas veces quieran.";}
+    else  if (capitulo==11 && once==7) {
+    document.getElementById("texto").innerHTML ="Cuando hayan acabado su testimonio, la bestia que sube del abismo hará guerra contra ellos, y los vencerá y los matará.";}
+    else    if (capitulo==11 && once==8) {
+    document.getElementById("texto").innerHTML ="Y sus cadáveres estarán en la plaza de la grande ciudad que en sentido espiritual se llama Sodoma y Egipto, donde también nuestro Señor fue crucificado.";}
+    else   if (capitulo==11 && once==9) {
+    document.getElementById("texto").innerHTML ="Y los de los pueblos, tribus, lenguas y naciones verán sus cadáveres por tres días y medio, y no permitirán que sean sepultados.";}
+    else   if (capitulo==11 && once==10) {
+    document.getElementById("texto").innerHTML ="Y los moradores de la tierra se regocijarán sobre ellos y se alegrarán, y se enviarán regalos unos a otros; porque estos dos profetas habían atormentado a los moradores de la tierra.";}
+    else   if (capitulo==11 && once==11) {
+    document.getElementById("texto").innerHTML ="Pero después de tres días y medio entró en ellos el espíritu de vida enviado por Dios, y se levantaron sobre sus pies, y cayó gran temor sobre los que los vieron.";}
+    else  if (capitulo==11 && once==12) {
+    document.getElementById("texto").innerHTML ="Y oyeron una gran voz del cielo, que les decía: Subid acá. Y subieron al cielo en una nube; y sus enemigos los vieron.";}
+    else   if (capitulo==11 && once==13) {
+    document.getElementById("texto").innerHTML ="En aquella hora hubo un gran terremoto, y la décima parte de la ciudad se derrumbó, y por el terremoto murieron en número de siete mil hombres; y los demás se aterrorizaron, y dieron gloria al Dios del cielo.";}
+    else    if (capitulo==11 && once==14) {
+    document.getElementById("texto").innerHTML ="El segundo ay pasó; he aquí, el tercer ay viene pronto.";}
+    else    if (capitulo==11 && once==15) {
+    document.getElementById("texto").innerHTML ="El séptimo ángel tocó la trompeta, y hubo grandes voces en el cielo, que decían: Los reinos del mundo han venido a ser de nuestro Señor y de su Cristo; y él reinará por los siglos de los siglos.";}
+    else  if (capitulo==11 && once==16) {
+    document.getElementById("texto").innerHTML ="Y los veinticuatro ancianos que estaban sentados delante de Dios en sus tronos, se postraron sobre sus rostros, y adoraron a Dios";}
+    else  if (capitulo==11 && once==17) {
+    document.getElementById("texto").innerHTML ="diciendo: Te damos gracias, Señor Dios Todopoderoso, el que eres y que eras y que has de venir, porque has tomado tu gran poder, y has reinado.";}
+    else  if (capitulo==11 && once==18) {
+    document.getElementById("texto").innerHTML ="Y se airaron las naciones, y tu ira ha venido, y el tiempo de juzgar a los muertos, y de dar el galardón a tus siervos los profetas, a los santos, y a los que temen tu nombre, a los pequeños y a los grandes, y de destruir a los que destruyen la tierra.";}
+    else  if (capitulo==11 && once==19) {
+    document.getElementById("texto").innerHTML ="Y el templo de Dios fue abierto en el cielo, y el arca de su pacto se veía en el templo. Y hubo relámpagos, voces, truenos, un terremoto y grande granizo.";}
+
+    else if (capitulo==12 && doce==1) {
+    document.getElementById("texto").innerHTML ="Apareció en el cielo una gran señal: una mujer vestida del sol, con la luna debajo de sus pies, y sobre su cabeza una corona de doce estrellas.";}
+    else if (capitulo==12 && doce==2) {
+    document.getElementById("texto").innerHTML ="Y estando encinta, clamaba con dolores de parto, en la angustia del alumbramiento.";}
+    else  if (capitulo==12 && doce==3) {
+    document.getElementById("texto").innerHTML ="También apareció otra señal en el cielo: he aquí un gran dragón escarlata, que tenía siete cabezas y diez cuernos, y en sus cabezas siete diademas";}
+    else   if (capitulo==12 && doce==4) {
+    document.getElementById("texto").innerHTML =" y su cola arrastraba la tercera parte de las estrellas del cielo, y las arrojó sobre la tierra. Y el dragón se paró frente a la mujer que estaba para dar a luz, a fin de devorar a su hijo tan pronto como naciese.";}
+    else   if (capitulo==12 && doce==5) {
+    document.getElementById("texto").innerHTML ="Y ella dio a luz un hijo varón, que regirá con vara de hierro a todas las naciones; y su hijo fue arrebatado para Dios y para su trono.";}
+    else   if (capitulo==12 && doce==6) {
+    document.getElementById("texto").innerHTML =" Y la mujer huyó al desierto, donde tiene lugar preparado por Dios, para que allí la sustenten por mil doscientos sesenta días.";}
+    else  if (capitulo==12 && doce==7) {
+    document.getElementById("texto").innerHTML ="Después hubo una gran batalla en el cielo: Miguel y sus ángeles luchaban contra el dragón; y luchaban el dragón y sus ángeles";}
+    else    if (capitulo==12 && doce==8) {
+    document.getElementById("texto").innerHTML ="pero no prevalecieron, ni se halló ya lugar para ellos en el cielo.";}
+    else   if (capitulo==12 && doce==9) {
+    document.getElementById("texto").innerHTML ="Y fue lanzado fuera el gran dragón, la serpiente antigua, que se llama diablo y Satanás, el cual engaña al mundo entero; fue arrojado a la tierra, y sus ángeles fueron arrojados con él.";}
+    else   if (capitulo==12 && doce==10) {
+    document.getElementById("texto").innerHTML ="Entonces oí una gran voz en el cielo, que decía: Ahora ha venido la salvación, el poder, y el reino de nuestro Dios, y la autoridad de su Cristo; porque ha sido lanzado fuera el acusador de nuestros hermanos, el que los acusaba delante de nuestro Dios día y noche.";}
+    else   if (capitulo==12 && doce==11) {
+    document.getElementById("texto").innerHTML =" Y ellos le han vencido por medio de la sangre del Cordero y de la palabra del testimonio de ellos, y menospreciaron sus vidas hasta la muerte.";}
+    else  if (capitulo==12 && doce==12) {
+    document.getElementById("texto").innerHTML ="Por lo cual alegraos, cielos, y los que moráis en ellos. ¡Ay de los moradores de la tierra y del mar! porque el diablo ha descendido a vosotros con gran ira, sabiendo que tiene poco tiempo.";}
+    else   if (capitulo==12 && doce==13) {
+    document.getElementById("texto").innerHTML ="Y cuando vio el dragón que había sido arrojado a la tierra, persiguió a la mujer que había dado a luz al hijo varón.";}
+    else    if (capitulo==12 && doce==14) {
+    document.getElementById("texto").innerHTML ="Y se le dieron a la mujer las dos alas de la gran águila, para que volase de delante de la serpiente al desierto, a su lugar, donde es sustentada por un tiempo, y tiempos, y la mitad de un tiempo.";}
+    else    if (capitulo==12 && doce==15) {
+    document.getElementById("texto").innerHTML ="Y la serpiente arrojó de su boca, tras la mujer, agua como un río, para que fuese arrastrada por el río.";}
+    else  if (capitulo==12 && doce==16) {
+    document.getElementById("texto").innerHTML ="Pero la tierra ayudó a la mujer, pues la tierra abrió su boca y tragó el río que el dragón había echado de su boca.";}
+    else  if (capitulo==12 && doce==17) {
+    document.getElementById("texto").innerHTML ="Entonces el dragón se llenó de ira contra la mujer; y se fue a hacer guerra contra el resto de la descendencia de ella, los que guardan los mandamientos de Dios y tienen el testimonio de Jesucristo.";}
+
+    else if (capitulo==13 &&trece==1) {
+    document.getElementById("texto").innerHTML ="Me paré sobre la arena del mar, y vi subir del mar una bestia que tenía siete cabezas y diez cuernos; y en sus cuernos diez diademas; y sobre sus cabezas, un nombre blasfemo.";}
+    else if (capitulo==13 && trece==2) {
+    document.getElementById("texto").innerHTML =" Y la bestia que vi era semejante a un leopardo, y sus pies como de oso, y su boca como boca de león. Y el dragón le dio su poder y su trono, y grande autoridad.";}
+    else  if (capitulo==13 && trece==3) {
+    document.getElementById("texto").innerHTML ="Vi una de sus cabezas como herida de muerte, pero su herida mortal fue sanada; y se maravilló toda la tierra en pos de la bestia";}
+    else   if (capitulo==13 && trece==4) {
+    document.getElementById("texto").innerHTML =" y adoraron al dragón que había dado autoridad a la bestia, y adoraron a la bestia, diciendo: ¿Quién como la bestia, y quién podrá luchar contra ella?";}
+    else   if (capitulo==13 && trece==5) {
+    document.getElementById("texto").innerHTML ="También se le dio boca que hablaba grandes cosas y blasfemias; y se le dio autoridad para actuar cuarenta y dos meses.";}
+    else   if (capitulo==13 && trece==6) {
+    document.getElementById("texto").innerHTML ="Y abrió su boca en blasfemias contra Dios, para blasfemar de su nombre, de su tabernáculo, y de los que moran en el cielo.";}
+    else  if (capitulo==13 && trece==7) {
+    document.getElementById("texto").innerHTML ="Y se le permitió hacer guerra contra los santos, y vencerlos. También se le dio autoridad sobre toda tribu, pueblo, lengua y nación.";}
+    else    if (capitulo==13 && trece==8) {
+    document.getElementById("texto").innerHTML ="Y la adoraron todos los moradores de la tierra cuyos nombres no estaban escritos en el libro de la vida del Cordero que fue inmolado desde el principio del mundo.";}
+    else   if (capitulo==13 && trece==9) {
+    document.getElementById("texto").innerHTML =" Si alguno tiene oído, oiga.";}
+    else   if (capitulo==13 && trece==10) {
+    document.getElementById("texto").innerHTML ="Si alguno lleva en cautividad, va en cautividad; si alguno mata a espada, a espada debe ser muerto. Aquí está la paciencia y la fe de los santos.";}
+    else   if (capitulo==13 && trece==11) {
+    document.getElementById("texto").innerHTML ="Después vi otra bestia que subía de la tierra; y tenía dos cuernos semejantes a los de un cordero, pero hablaba como dragón.";}
+    else  if (capitulo==13 && trece==12) {
+    document.getElementById("texto").innerHTML ="Y ejerce toda la autoridad de la primera bestia en presencia de ella, y hace que la tierra y los moradores de ella adoren a la primera bestia, cuya herida mortal fue sanada.";}
+    else   if (capitulo==13 && trece==13) {
+    document.getElementById("texto").innerHTML ="También hace grandes señales, de tal manera que aun hace descender fuego del cielo a la tierra delante de los hombres.";}
+    else    if (capitulo==13 && trece==14) {
+    document.getElementById("texto").innerHTML =" Y engaña a los moradores de la tierra con las señales que se le ha permitido hacer en presencia de la bestia, mandando a los moradores de la tierra que le hagan imagen a la bestia que tiene la herida de espada, y vivió.";}
+    else    if (capitulo==13 && trece==15) {
+    document.getElementById("texto").innerHTML =" Y se le permitió infundir aliento a la imagen de la bestia, para que la imagen hablase e hiciese matar a todo el que no la adorase.";}
+    else  if (capitulo==13 && trece==16) {
+    document.getElementById("texto").innerHTML ="Y hacía que a todos, pequeños y grandes, ricos y pobres, libres y esclavos, se les pusiese una marca en la mano derecha, o en la frente;";}
+    else  if (capitulo==13 && trece==17) {
+    document.getElementById("texto").innerHTML ="y que ninguno pudiese comprar ni vender, sino el que tuviese la marca o el nombre de la bestia, o el número de su nombre.";}
+    else  if (capitulo==13 && trece==18) {
+    document.getElementById("texto").innerHTML ="Aquí hay sabiduría. El que tiene entendimiento, cuente el número de la bestia, pues es número de hombre. Y su número es seiscientos sesenta y seis.";}
+    
+    if (capitulo==14 && catorce==1){
+    document.getElementById("texto").innerHTML ="Después miré, y he aquí el Cordero estaba en pie sobre el monte de Sion, y con él ciento cuarenta y cuatro mil, que tenían el nombre de él y el de su Padre escrito en la frente.";}
+    if (capitulo==14 && catorce==2){
+    document.getElementById("texto").innerHTML ="Y oí una voz del cielo como estruendo de muchas aguas, y como sonido de un gran trueno; y la voz que oí era como de arpistas que tocaban sus arpas.";}
+    if (capitulo==14 && catorce==3){
+    document.getElementById("texto").innerHTML ="Y cantaban un cántico nuevo delante del trono, y delante de los cuatro seres vivientes, y de los ancianos; y nadie podía aprender el cántico sino aquellos ciento cuarenta y cuatro mil que fueron redimidos de entre los de la tierra.";}
+    if (capitulo==14 && catorce==4){
+    document.getElementById("texto").innerHTML ="Estos son los que no se contaminaron con mujeres, pues son vírgenes. Estos son los que siguen al Cordero por dondequiera que va. Estos fueron redimidos de entre los hombres como primicias para Dios y para el Cordero;";}
+    if (capitulo==14 && catorce==5){
+    document.getElementById("texto").innerHTML ="y en sus bocas no fue hallada mentira, pues son sin mancha delante del trono de Dios.";}
+    if (capitulo==14 && catorce==6){
+    document.getElementById("texto").innerHTML ="Vi volar por en medio del cielo a otro ángel, que tenía el evangelio eterno para predicarlo a los moradores de la tierra, a toda nación, tribu, lengua y pueblo";}
+    if (capitulo==14 && catorce==7){
+    document.getElementById("texto").innerHTML ="diciendo a gran voz: Temed a Dios, y dadle gloria, porque la hora de su juicio ha llegado; y adorad a aquel que hizo el cielo y la tierra, el mar y las fuentes de las aguas.";}
+    if (capitulo==14 && catorce==8){
+    document.getElementById("texto").innerHTML ="Otro ángel le siguió, diciendo: Ha caído, ha caído Babilonia, la gran ciudad, porque ha hecho beber a todas las naciones del vino del furor de su fornicación.";}
+    if (capitulo==14 && catorce==9){
+    document.getElementById("texto").innerHTML ="Y el tercer ángel los siguió, diciendo a gran voz: Si alguno adora a la bestia y a su imagen, y recibe la marca en su frente o en su mano";}
+    if (capitulo==14 && catorce==10){
+    document.getElementById("texto").innerHTML =" él también beberá del vino de la ira de Dios, que ha sido vaciado puro en el cáliz de su ira; y será atormentado con fuego y azufre delante de los santos ángeles y del Cordero;";}
+    if (capitulo==14 && catorce==11){
+    document.getElementById("texto").innerHTML ="y el humo de su tormento sube por los siglos de los siglos. Y no tienen reposo de día ni de noche los que adoran a la bestia y a su imagen, ni nadie que reciba la marca de su nombre.";}
+    if (capitulo==14 && catorce==12){
+    document.getElementById("texto").innerHTML ="Aquí está la paciencia de los santos, los que guardan los mandamientos de Dios y la fe de Jesús.";}
+    if (capitulo==14 && catorce==13){
+    document.getElementById("texto").innerHTML ="Oí una voz que desde el cielo me decía: Escribe: Bienaventurados de aquí en adelante los muertos que mueren en el Señor. Sí, dice el Espíritu, descansarán de sus trabajos, porque sus obras con ellos siguen.";}
+    if (capitulo==14 && catorce==14){
+    document.getElementById("texto").innerHTML ="Miré, y he aquí una nube blanca; y sobre la nube uno sentado semejante al Hijo del Hombre, que tenía en la cabeza una corona de oro, y en la mano una hoz aguda.";}
+    if (capitulo==14 && catorce==15){
+    document.getElementById("texto").innerHTML ="Y del templo salió otro ángel, clamando a gran voz al que estaba sentado sobre la nube: Mete tu hoz, y siega; porque la hora de segar ha llegado, pues la mies de la tierra está madura. ";}
+    if (capitulo==14 && catorce==16){
+    document.getElementById("texto").innerHTML ="Y el que estaba sentado sobre la nube metió su hoz en la tierra, y la tierra fue segada.";}
+    if (capitulo==14 && catorce==17){
+    document.getElementById("texto").innerHTML ="Salió otro ángel del templo que está en el cielo, teniendo también una hoz aguda.";}
+    if (capitulo==14 && catorce==18){
+    document.getElementById("texto").innerHTML =" Y salió del altar otro ángel, que tenía poder sobre el fuego, y llamó a gran voz al que tenía la hoz aguda, diciendo: Mete tu hoz aguda, y vendimia los racimos de la tierra, porque sus uvas están maduras.";}
+    if (capitulo==14 && catorce==19){
+    document.getElementById("texto").innerHTML ="Y el ángel arrojó su hoz en la tierra, y vendimió la viña de la tierra, y echó las uvas en el gran lagar de la ira de Dios.";}
+    if (capitulo==14 && catorce==20){
+    document.getElementById("texto").innerHTML ="Y fue pisado el lagar fuera de la ciudad, y del lagar salió sangre hasta los frenos de los caballos, por mil seiscientos estadios.";}
+
+    
+    if (capitulo==15 && quince==1){
+    document.getElementById("texto").innerHTML ="Vi en el cielo otra señal, grande y admirable: siete ángeles que tenían las siete plagas postreras; porque en ellas se consumaba la ira de Dios.";}
+    if (capitulo==15 && quince==2){
+    document.getElementById("texto").innerHTML =" Vi también como un mar de vidrio mezclado con fuego; y a los que habían alcanzado la victoria sobre la bestia y su imagen, y su marca y el número de su nombre, en pie sobre el mar de vidrio, con las arpas de Dios.";}
+    if (capitulo==15 && quince==3){
+    document.getElementById("texto").innerHTML ="Y cantan el cántico de Moisés siervo de Dios, y el cántico del Cordero, diciendo: Grandes y maravillosas son tus obras, Señor Dios Todopoderoso; justos y verdaderos son tus caminos, Rey de los santos.";}
+    if (capitulo==15 && quince==4){
+    document.getElementById("texto").innerHTML ="¿Quién no te temerá, oh Señor, y glorificará tu nombre? pues solo tú eres santo; por lo cual todas las naciones vendrán y te adorarán, porque tus juicios se han manifestado.";}
+    if (capitulo==15 && quince==5){
+    document.getElementById("texto").innerHTML =" Después de estas cosas miré, y he aquí fue abierto en el cielo el templo del tabernáculo del testimonio;";}
+    if (capitulo==15 && quince==6){
+    document.getElementById("texto").innerHTML =" y del templo salieron los siete ángeles que tenían las siete plagas, vestidos de lino limpio y resplandeciente, y ceñidos alrededor del pecho con cintos de oro.";}
+    if (capitulo==15 && quince==7){
+    document.getElementById("texto").innerHTML ="Y uno de los cuatro seres vivientes dio a los siete ángeles siete copas de oro, llenas de la ira de Dios, que vive por los siglos de los siglos. ";}
+    if (capitulo==15 && quince==8){
+    document.getElementById("texto").innerHTML ="Y el templo se llenó de humo por la gloria de Dios, y por su poder; y nadie podía entrar en el templo hasta que se hubiesen cumplido las siete plagas de los siete ángeles.";}
+
+    let oculto = document.getElementById("oculto");
+    let mostrar = document.getElementById("mostrar");
+    if (oculto.style.display === "block") {
+        oculto.style.display = "none";
+        mostrar.style.display = "block";
+    }
+}
+
+    flashcard()
+    
+function mostrarOcultar() {
+let oculto = document.getElementById("oculto");
+let mostrar = document.getElementById("mostrar");
+if (oculto.style.display === "none") {
+oculto.style.display = "block";
+mostrar.style.display = "none";}
+else {
+oculto.style.display = "none";}
+}  
+
+</script>
+</body>
+</html>
